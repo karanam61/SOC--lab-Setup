@@ -68,21 +68,22 @@ Event Viewer → Security log shows events for computer join and logons.
 - If successful, you’ll see “Welcome to the soc.lab domain”
 - Restart the workstation
 
-## SOC Relevance
+### SOC Relevance
 
 Domain-joined workstations generate critical logs SOC teams monitor:
 
-*On the DC*
+## On the DC
 -4624 → Successful logon
 -4625 → Failed logon
 -4741 / 4742 → Computer account created/modified
 -4768 / 4769 / 4771 → Kerberos ticket events
 
-*On the Workstation* (with Sysmon – Step 4):
+## On the Workstation (with Sysmon – Step 4):
 Event ID 1 → Process creation
 Event ID 3 → Network connections
 Group policy logs → applied at logon
 
 This makes the workstation a real part of the SOC lab — tied to AD, generating authentication noise, and providing endpoints for attack simulation.
+
 
 
