@@ -68,7 +68,7 @@ Event Viewer → Security log shows events for computer join and logons.
 - If successful, you’ll see “Welcome to the soc.lab domain”
 - Restart the workstation
 
-### SOC Relevance
+## SOC Relevance
 
 Domain-joined workstations generate critical logs SOC teams monitor:
 
@@ -84,6 +84,7 @@ Event ID 3 → Network connections
 Group policy logs → applied at logon
 
 This makes the workstation a real part of the SOC lab — tied to AD, generating authentication noise, and providing endpoints for attack simulation.
+
 
 
 
