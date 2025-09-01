@@ -24,6 +24,28 @@ This step adds a Windows 10/11 workstation to the **soc.lab** domain. In a SOC l
   - Domain/forest: `soc.lab` (NetBIOS: `SOC`)
 - Workstation VM connected to **Host-only (VMnet1)** same as DC.
 
+## Validation
+
+After reboot, log in with a domain account. Run:
+
+-ipconfig /all
+-nslookup soc-ad1.soc.lab
+-nslookup google.com
+-ping 192.168.1.200
+-ping 8.8.8.8
+-nslookup -type=SRV _ldap._tcp.dc._msdcs.soc.lab
+-klist
+-nltest /dsgetdc:soc.lab
+-whoami /upn
+-whoami /groups
+
+
+## On the DC:
+
+In Active Directory Users and Computers (ADUC) → workstation appears under Computers.
+
+Event Viewer → Security log shows events for computer join and logons.
+
 ---
 
 ## Network Configuration
@@ -45,3 +67,4 @@ This step adds a Windows 10/11 workstation to the **soc.lab** domain. In a SOC l
 - Provide domain admin credentials → e.g., SOC\Administrator
 - If successful, you’ll see “Welcome to the soc.lab domain”
 - Restart the workstation
+
