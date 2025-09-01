@@ -60,6 +60,18 @@ In short:
 
 BadBlood is a PowerShell script that populates AD with **users, groups, computers, and misconfigurations**, making the lab environment look like a real enterprise.
 
+## SOC Relevance
+
+The Domain Controller is the identity backbone of an enterprise. Almost every attack path runs through it.  
+
+With **BadBlood**, your lab generates realistic events for SOC practice:
+
+- Failed logons → brute-force and password spraying  
+- Service account misuse → Kerberoasting detection  
+- Privilege escalation → Golden Ticket, Silver Ticket 
+
+
+
 ### Installation
 ```powershell
 git clone https://github.com/davidprowe/BadBlood.git
@@ -67,20 +79,12 @@ cd BadBlood
 Set-ExecutionPolicy Bypass -Scope Process -Force
 .\Invoke-BadBlood.ps1
 
-### SOC-Relevance
 
-The Domain Controller is the identity backbone of an enterprise. Almost every attacker interacts with AD at some point.
 
-With BadBlood, your lab generates realistic events for SOC practice:
 
-Failed logons → brute-force and password spraying
 
-Service account queries → Kerberoasting detection
 
-Misconfigured accounts → AS-REP roasting detection
 
-Group membership changes → privilege escalation or insider abuse
 
-Instead of a sterile AD install, your lab now feels like a real corporate directory. SOC analysts can investigate identity-based attacks with realistic noise and complexity, just like they would in production.
 
 
